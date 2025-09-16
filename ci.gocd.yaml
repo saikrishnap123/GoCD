@@ -1,19 +1,15 @@
-format_version: 11
+format_version: 10
 
 pipelines:
   github-demo-pipeline:
     group: DevOps
-    label_template: "${COUNT}"
     materials:
       github-repo:
         type: git
         url: https://github.com/saikrishnap123/GoCD.git
         branch: main
-        # username: <your-username>        # Uncomment if private repo
-        # password: <personal-access-token>
     stages:
       - build-stage:
-          clean_working_directory: true
           jobs:
             - build-job:
                 tasks:
