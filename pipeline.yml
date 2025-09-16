@@ -2,7 +2,7 @@ format_version: 10
 
 pipelines:
   github-demo-pipeline:
-    group: default
+    group: DevOps
     materials:
       github-repo:
         type: git
