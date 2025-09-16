@@ -1,0 +1,23 @@
+format_version: 10
+
+pipelines:
+  github-demo-pipeline:
+    group: default
+    materials:
+      github-repo:
+        type: git
+        url: https://github.com/<username>/<repo>.git
+        branch: main
+    stages:
+      - build-stage:
+          jobs:
+            - build-job:
+                tasks:
+                  - exec:
+                      command: echo
+                      arguments:
+                        - "Hello, GoCD pipeline!"
+                  - exec:
+                      command: ./gradlew
+                      arguments:
+                        - build
