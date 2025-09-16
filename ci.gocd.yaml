@@ -9,11 +9,11 @@ pipelines:
         url: https://github.com/saikrishnap123/GoCD.git
         branch: main
     stages:
-      - build-stage:
-          jobs:
-            - build-job:
-                tasks:
-                  - exec:
-                      command: echo
-                      arguments:
-                        - "Hello, GoCD pipeline!"
+      - name: build-stage
+        jobs:
+          - name: build-job
+            tasks:
+              - exec:
+                  command: echo
+                  arguments:
+                    - "Hello, GoCD pipeline!"
