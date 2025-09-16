@@ -1,19 +1,18 @@
 format_version: 10
-
 pipelines:
   github-demo-pipeline:
-    group: DevOps
+    group: example
+    label_template: "${COUNT}"
     materials:
-      github-repo:
-        type: git
-        url: https://github.com/saikrishnap123/GoCD.git
+      git-repo:
+        git: https://github.com/saikrishnap123/GoCD.git
         branch: main
     stages:
-      - name: build-stage
-        jobs:
-          - name: build-job
-            tasks:
-              - exec:
-                  command: echo
-                  arguments:
-                    - "Hello, GoCD pipeline!"
+      - build:
+          jobs:
+            build-job:
+              tasks:
+                - exec:
+                    command: echo
+                    arguments:
+                      - "Hello, GoCD"
