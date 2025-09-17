@@ -6,7 +6,7 @@ pipelines:
     parameters: 
       ENV: "dev"
     environment_variables:
-      repository: https://github.com/saikrishnap123/GoCD.git 
+      repository: "https://github.com/saikrishnap123/GoCD.git" 
     materials:
       git-repo:
         git: ${repository}
