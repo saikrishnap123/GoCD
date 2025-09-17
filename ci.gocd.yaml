@@ -6,6 +6,7 @@ pipelines:
     parameters: 
       ENV: "dev"
     environment_variables: 
+      name: "Navi"
     materials:
       git-repo:
         git: "https://github.com/saikrishnap123/GoCD.git"
@@ -30,5 +31,6 @@ pipelines:
                     arguments:
                       - -c
                       - |
-                        echo "Hello ${ENV} environment "
+                        echo 'Hello "${ENV}" environment '
+  
                         
