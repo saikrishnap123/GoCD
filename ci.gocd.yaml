@@ -3,9 +3,13 @@ pipelines:
   github-pipeline:
     group: DevOps
     label_template: "${COUNT}"
+    parameters: 
+      ENV: "dev"
+    environment_variables:
+      repository: https://github.com/saikrishnap123/GoCD.git 
     materials:
       git-repo:
-        git: https://github.com/saikrishnap123/GoCD.git
+        git: ${repository}
         branch: main
     stages:
       - build:
@@ -16,3 +20,16 @@ pipelines:
                     command: echo
                     arguments:
                       - "Hello, GoCD"
+      
+      - deploy:               # Stage 2
+          approval: manual     # requires manual approval
+          jobs:
+            deploy-job:
+              tasks:
+                - exec:
+                    command: bash
+                    arguments:
+                      - -c
+                      - |
+                        echo "Hello ${ENV} environment "
+                        
