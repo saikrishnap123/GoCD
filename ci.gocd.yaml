@@ -5,11 +5,10 @@ pipelines:
     label_template: "${COUNT}"
     parameters: 
       ENV: "dev"
-    environment_variables:
-      repository: "https://github.com/saikrishnap123/GoCD.git" 
+    environment_variables: 
     materials:
       git-repo:
-        git: ${repository}
+        git: "https://github.com/saikrishnap123/GoCD.git"
         branch: main
     stages:
       - build:
