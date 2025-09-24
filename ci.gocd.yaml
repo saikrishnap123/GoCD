@@ -17,9 +17,9 @@ pipelines:
             build-job:
               tasks:
                 - exec:
-                    command: ping
+                    command: echo
                     arguments:
-                      - 192.168.14.148
+                      - "hello gocd"
       
       - deploy:               # Stage 2
           approval: manual     # requires manual approval
