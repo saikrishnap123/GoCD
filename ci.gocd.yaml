@@ -31,6 +31,4 @@ pipelines:
                     arguments:
                       - -c
                       - |
-                        echo "Hello $name in $ENV environment"
-  
-                        
+                        echo "Hello $name in ${ENV} environment"
