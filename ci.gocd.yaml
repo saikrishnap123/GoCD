@@ -9,7 +9,7 @@ pipelines:
       name: "Navi"
     materials:
       git-repo:
-        git: "https://github.com/saikrishnap123/GoCD.git"
+        git: "https://github.com/saikrishnap123/GoCD.git" 
         branch: main
     stages:
       - build:
